@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon Parking</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <img class="horizon-logo" src="photos/horizon-png.png" alt="Horizon Parking Logo">
+    </header>
+
+    <!-- Google Maps Embed -->
+    <div class="google-maps">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2424.883734338536!2d-0.2158!3d51.3987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48762b5687b5cf8d%3A0x6d64b4961d5f5d72!2sShortlands%2C%20Bromley%2C%20Kent!5e0!3m2!1sen!2us!4v1644321553214!5m2!1sen!2us" 
+            width="100%" 
+            height="300" 
+            style="border:0;" 
+            allowfullscreen 
+            loading="lazy">
+        </iframe>
+    </div>
+
+    <!-- Location Container -->
+    <div class="location-container">
+        <p class="location">Station Road, Shortlands, Shortlands</p>
+        <span class="code">(6068)</span>
+        <div class="stars"></div> <!-- Stars placed inside the same container -->
+    </div>
+
+    <!-- Review Number -->
+    <p class="review-number">(11)</p>
+
+    <!-- Parking Images Section -->
+    <div class="image-container">
+        <img class="parking1" src="photos/parkingspace1.png" alt="Parking Space 1" onclick="openModal('photos/parkingspace1.png')">
+        <img class="parking1" src="photos/parkingspace2.png" alt="Parking Space 2" onclick="openModal('photos/parkingspace2.png')">
+        <img class="parking1" src="photos/parkingspace3.png" alt="Parking Space 3" onclick="openModal('photos/parkingspace3.png')">
+    </div>
+
+
+<!-- 🔲 Image Modal with Arrows -->
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <span class="prev" onclick="changeImage(-1)">&#10094;</span> <!-- Left Arrow -->
+    <img class="modal-content" id="modalImage">
+    <span class="next" onclick="changeImage(1)">&#10095;</span> <!-- Right Arrow -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- ... other content above ... -->
+
+<!-- The fine black line -->
+<div class="bottom-line"></div>
+
+<!-- Now, the Space Description heading appears after the black line -->
+<h4 class="space-description">Space Description</h4>
+
+
+
+<p class="space-details">
+    Parking spaces located on Shortlands in Station road. The spaces are suitable for vehicles up to the size of a Large - (4x4).
+  </p>
+
+
+<p class="space-details1">The spaces are available 24 hours on all days. You can enter/exit this car park multiple times throughout the duration of your booking.</p>
+
+<p class="space-details2"><strong>Important notice:</strong> The full address of the parking space/garage/car park will be provided following a successful booking</p>
+
+
+
+
+
+
+
+
+
+    <!-- JavaScript for Modal -->
+    <script>
+        // Get the modal elements
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("modalImage");
+        var currentIndex = 0;
+    
+        // Store image sources in an array
+        var images = [
+            "photos/parkingspace1.png",
+            "photos/parkingspace2.png",
+            "photos/parkingspace3.png"
+        ];
+    
+        // Function to open modal and show the clicked image
+        function openModal(imgSrc) {
+            modal.style.display = "flex"; // Use flex to center it
+            modalImg.src = imgSrc;
+            currentIndex = images.indexOf(imgSrc); // Set current index
+        }
+    
+        // Function to close modal
+        function closeModal() {
+            modal.style.display = "none";
+        }
+    
+        // Function to change images using arrows
+        function changeImage(direction) {
+            currentIndex += direction;
+    
+            // Ensure index loops back when reaching start or end
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1; // Go to last image if at first
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0; // Go to first image if at last
+            }
+    
+            modalImg.src = images[currentIndex]; // Update modal image
+        }
+    
+        // Close the modal when clicking outside the image
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+    
+        // Attach click event to all images
+        document.querySelectorAll(".parking1").forEach(img => {
+            img.addEventListener("click", function () {
+                openModal(this.src);
+            });
+        });
+
+
+
+
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+    var modal = document.querySelector(".modal");
+    var modalImg = document.querySelector(".modal-content");
+
+    modal.addEventListener("click", function (event) {
+        // Close only if clicking on the black background, NOT the image
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+
+    function closeModal() {
+        modal.style.display = "none";
+    }
+});
+
+
+
+
+    </script>    
+    
+
+</body>
+</html>

@@ -1,0 +1,398 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Apply Roboto as the default font */
+    background-color: rgb(255, 255, 255); /* Set background to white */
+    color: #333;
+    text-align: center; /* Centers everything by default */
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes logo to the right */
+    background-color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1000;
+}
+
+/* Move Logo More to the Right */
+.header .horizon-logo {
+    height: 55px;
+    width: auto;
+    margin-left: auto; /* Pushes logo to the right */
+    margin-right: 155px; /* Adjust this value to fine-tune the position */
+    position: relative;
+    top: 5px;
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 18px;
+    width: 24px;
+    cursor: pointer;
+    position: absolute;
+    left: 14px;
+}
+
+.menu-icon span {
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-color: #4db132;
+    border-radius: 2px;
+    margin-bottom: 4px;
+    margin-left: 10px;
+}
+
+.menu-icon span:last-child {
+    margin-bottom: 0;
+}
+
+/* Google Maps Embed */
+.google-maps {
+    position: relative;
+    width: 105%;
+    max-width: 400px;
+    height: 250px;
+    border-radius: 8px;
+    margin: 80px auto 0 auto; /* Remove bottom spacing */
+    top: -10px;
+}
+
+.google-maps iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Location Container: Groups Everything */
+.location-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto; /* Center the container */
+    text-align: left; /* Align text to the left */
+    padding-left: 20px; /* Add some padding for alignment */
+}
+
+/* Location Paragraph */
+.location {
+    font-size: 16px;
+    color: rgb(52, 89, 114); /* Blueish color for the main text */
+    font-weight: 700; /* Bold text */
+    margin: 0; /* Remove default margin */
+    line-height: 1.4; /* Improve readability */
+}
+
+/* Code (6068) Styling */
+.code {
+    display: block; /* Moves to the next line */
+    font-weight: bold;
+    color: rgb(52, 89, 114); /* Black color for the code */
+    margin-top: 5px; /* Add some spacing */
+}
+
+/* ⭐ Stars Styling */
+.stars {
+    display: block; /* Ensures stars appear below */
+    font-size: 14px; /* Increased for mobile readability */
+    letter-spacing: 2px;
+    position: relative;
+    color: #ccc; /* Gray stars */
+    text-align: left; /* Forces stars to be aligned to the left */
+    width: fit-content; /* Prevents extra spacing issues */
+    margin-top: 10px; /* Add spacing above stars */
+}
+
+/* Full 5 Stars */
+.stars::before {
+    content: "★★★★★"; /* Full 5 stars */
+    color: #ccc;
+}
+
+/* Gold Stars - 4.5 Rating */
+.stars::after {
+    content: "★★★★★"; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 89%; /* 4.5 stars filled */
+    overflow: hidden;
+    color: gold;
+}
+
+/* Review Number Styling */
+.review-number {
+    font-size: 16px;
+    color: #666; /* Gray color for the review number */
+    margin-top: 5px; /* Add spacing above the review number */
+    text-align: left; /* Align to the left */
+    padding-left: 20px; /* Match the padding of the location container */
+}
+
+/* ⭐ Mobile-Specific Fix: Ensures Stars Touch the Left Edge on Small Screens */
+@media only screen and (max-width: 600px) {
+    .location-container {
+        padding-left: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .location {
+        font-size: 22px; /* Adjusts for mobile */
+    }
+
+    .code {
+        font-size: 17px; /* Adjusts for mobile */
+    }
+
+    .stars {
+        font-size: 18px; /* Adjusts for mobile */
+    }
+
+    .review-number {
+        font-size: 16px; /* Smaller font size for the review number */
+        color: #3d3d3d; /* Gray color for the review number */
+        margin-top: -14px; /* Negative margin to move it up */
+        margin-left: 60px; /* Add left margin */
+        text-align: left; /* Align to the left */
+        padding-left: 20px; /* Match the padding of the location container */
+        display: block; /* Ensure it's displayed as a block element */
+        position: relative; /* Ensure it's positioned correctly */
+        z-index: 1; /* Bring it above other elements if needed */
+        letter-spacing: 0.2px;
+        font-family: Arial;
+    }
+}
+
+
+/* Responsive Design for Smaller Screens */
+@media only screen and (max-width: 600px) {
+    .review-number {
+        font-size: 11px; /* Even smaller font size for mobile */
+        margin-left: 25.5%; /* Adjust left margin for smaller screens */
+        margin-top: -19px; /* Adjust negative margin for smaller screens */
+    }
+}
+
+
+
+
+/* Ensure Proper Image Placement */
+.image-container {
+    gap: 8px;
+    display: flex;
+    justify-content: center; /* Centers image horizontally */
+    align-items: center; /* Centers image vertically */
+    width: 100%; /* Ensures it spans full width */
+}
+
+
+.parking1 {
+    width: 200%; /* Makes it slightly larger on mobile for visibility */
+    max-width: 115px; /* Limits size for smaller screens */
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 35px;
+    height: 70px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+
+/* 📱 Mobile Optimization */
+@media only screen and (max-width: 600px) {
+    .parking1 {
+        width: 200%; /* Makes it slightly larger on mobile for visibility */
+        max-width: 120px; /* Limits size for smaller screens */
+        margin-left: 2px;
+        margin-right: 2px;
+        margin-top: 35px;
+        height: 72.475px;
+        border-radius: 4px;
+        object-fit: cover;
+    }
+}
+
+
+/* 🖼️ Modal Styling (Hidden on Load) */
+.modal {
+    display: none; /* Ensures the modal is hidden initially */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+/* 📸 Modal Content */
+.modal-content {
+    max-width: 95%; /* Ensures the image fits within the screen */
+    max-height: 90vh; /* Limits image height to 90% of the viewport height */
+    object-fit: contain; /* Ensures the image fits without distortion */
+    border-radius: 5px; /* Smooth rounded corners */
+    position: relative;
+}
+
+/* ❌ Close Button */
+.close {
+    position: absolute;
+    top: 200px; /* Positions close button at the top */
+    right: 15px; /* Positions close button at the right */
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 5px 12px;
+    border-radius: 5px;
+    opacity: 0.8;
+}
+
+.close:hover {
+    opacity: 1; /* Makes the close button fully visible on hover */
+}
+
+
+
+
+
+
+/* ⬅️⬅️ Left & Right Navigation Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%; /* Centers vertically */
+    transform: translateY(-50%);
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+    color: rgba(255, 255, 255, 0.808);
+    opacity: 0.8;
+    z-index: 1100; /* Ensure they are above other elements */
+}
+
+/* Add a larger clickable area using ::before */
+.prev::before, .next::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250px;  /* Adjust the size of the clickable area */
+    height: 200px; /* Adjust height to be easier to click */
+    background: transparent; /* No background so it remains invisible */
+    transform: translate(-50%, -50%);
+}
+
+/* Positioning adjustments */
+.prev { left: 20px; } /* Left arrow */
+.next { right: 20px; } /* Right arrow */
+
+  
+
+
+
+
+  /* Footer: the fine black line at the bottom */
+  .bottom-line {
+    margin-top: 34px;
+    margin-left: 20px;
+    width: 90%;
+    overflow: hidden; /* Ensure the scaled element doesn’t overflow */
+  }
+  
+  .bottom-line::after {
+    content: "";
+    display: block;
+    height: 4.5px;
+    background-color: rgba(128, 128, 128, 0.488);
+    transform: scaleY(0.1);  /* Scale it vertically to 10% of its height */
+    transform-origin: bottom;
+  }
+
+
+  .space-description {
+    font-size: 19px;
+    margin-bottom: 0px;
+    font-family: Roboto;
+    margin-right: 220px;
+    margin-top: 5px;  /* Keep it small so it sits closely under the line */
+    text-align: center;
+    color: rgb(52, 89, 114);
+}
+
+@media (max-width: 376px) {
+    .space-description {
+        margin-left: 9px;
+        margin-bottom: 0px;
+        white-space: nowrap; /* Prevents line breaks */
+        max-width: 100%; /* Ensures it uses the full screen width */
+        font-size: 18px; /* Dynamically scales font size */
+        text-align: center; /* Ensures text stays centered */
+        padding: 0 10px; /* Adds small padding to prevent overflow */
+    }
+
+    .location {
+        white-space: nowrap; /* Prevents line breaks */
+        max-width: 100%; /* Ensures it uses the full screen width */
+        font-size: 20px; /* Keeps font size consistent */
+        text-align: left; /* Aligns text to the left */
+        padding: 0; /* Removes any extra spacing */
+        margin-left: 0; /* Ensures it touches the left edge */
+    }
+}
+
+
+
+.space-details {
+    font-family: Soleil, sans-serif;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    line-height: 25px;
+    margin-bottom: 0px;
+    margin-top: 15px;     /* A bit of spacing from the heading */
+    margin-left: 20px;   /* Aligns with the heading; adjust as needed */
+    text-align: left;
+    font-size: 16px;     /* Example font size, adjust as needed */
+    color: rgb(23, 30, 33);         /* Use your site's text color */
+  }
+
+
+.space-details1 {
+    font-family: Soleil, sans-serif;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    line-height: 25px;
+    margin-bottom: 0px;
+    margin-top: 15px;     /* A bit of spacing from the heading */
+    margin-left: 20px;   /* Aligns with the heading; adjust as needed */
+    text-align: left;
+    font-size: 16px;     /* Example font size, adjust as needed */
+    color: rgb(23, 30, 33);         /* Use your site's text color */
+}
+
+.space-details2 {
+    font-family: Soleil, sans-serif;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    line-height: 25px;
+    margin-bottom: 0px;
+    margin-top: 15px;     /* A bit of spacing from the heading */
+    margin-left: 20px;   /* Aligns with the heading; adjust as needed */
+    text-align: left;
+    font-size: 16px;     /* Example font size, adjust as needed */
+    color: rgb(23, 30, 33);         /* Use your site's text color */
+}
+
+
+
+
+   
